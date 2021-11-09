@@ -12,7 +12,7 @@ export const App = () => {
 	const [error, setError] = useState("");
 	const [weatherId, setWeatheriD] = useState("");
 
-	const getInitialWeather = async () => {
+	const getActualWeather = async () => {
 		if (city !== "") {
 			setIsLoading(<h4>Loading...</h4>);
 			const data = await getWeather({ city, setError });
@@ -35,10 +35,10 @@ export const App = () => {
 	};
 
 	useEffect(() => {
-		getInitialWeather();
+		getActualWeather();
 	}, []);
 
-	const checkOnPressKey = (e) => (e.key === "Enter" ? getInitialWeather() : "");
+	const checkOnPressKey = (e) => (e.key === "Enter" ? getActualWeather() : "");
 
 	return (
 		<div>
@@ -53,7 +53,7 @@ export const App = () => {
 					></input>
 					<button
 						className="btn-hover color-4"
-						onClick={() => getInitialWeather()}
+						onClick={() => getActualWeather()}
 					>
 						Search
 					</button>
