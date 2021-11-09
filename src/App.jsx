@@ -38,6 +38,8 @@ export const App = () => {
 		getInitialWeather();
 	}, []);
 
+	const checkOnPressKey = (e) => (e.key === "Enter" ? getInitialWeather() : "");
+
 	return (
 		<div>
 			{data && (
@@ -47,7 +49,7 @@ export const App = () => {
 						placeholder="Write your city..."
 						value={city}
 						onChange={(e) => setCity(e.target.value)}
-						onKeyPress={(e) => (e.key === "Enter" ? getInitialWeather() : "")}
+						onKeyPress={(e) => checkOnPressKey(e)}
 					></input>
 					<button
 						className="btn-hover color-4"
@@ -71,7 +73,7 @@ export const App = () => {
 							{" "}
 							<img
 								src={`http://openweathermap.org/img/wn/${weatherId}@2x.png`}
-								alt="{data?.weather[0]?.description}"
+								alt={data?.weather[0]?.description}
 							/>
 							<h2 className="weather-description">
 								{data?.weather[0]?.description}
@@ -89,4 +91,3 @@ export const App = () => {
 		</div>
 	);
 };
-
