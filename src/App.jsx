@@ -38,8 +38,11 @@ export const App = () => {
 		getActualWeather();
 	}, []);
 
-	const checkOnPressKey = (e) => (e.key === "Enter" ? getActualWeather() : "");
-
+	const checkOnPressKey = (event) => {
+	 if (event.key === "Enter") {
+	    getActualWeather()
+	 }
+	};
 	return (
 		<div>
 			{data && (
