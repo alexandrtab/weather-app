@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Montserrat", sans-serif;
+}
+.container {
+	display: block;
+	border-radius: 10px;
+	max-width: 900px;
+	text-align: center;
+	margin: 0 auto;
+	padding: 40px;
+	color: white;
+	background: rgb(130, 100, 255);
+	background: linear-gradient(
+		90deg,
+		rgba(130, 100, 255, 1) 0%,
+		rgba(159, 159, 255, 1) 50%,
+		rgba(95, 228, 255, 1) 100%
+	);
+
+	-webkit-box-shadow: 5px 4px 22px 10px rgba(34, 60, 80, 0.17);
+-moz-box-shadow: 5px 4px 22px 10px rgba(34, 60, 80, 0.17);
+box-shadow: 5px 4px 22px 10px rgba(34, 60, 80, 0.17);
+}
+.container input {
+	width: 400px;
+	height: 30px;
+	padding: 20px;
+	font-size: 13pt;
+	border-radius: 20px;
+	border: none;
+	outline: none;
+	background-color: rgb(238, 238, 238);
+}
+.btn-hover {
+	width: 100px;
+	font-size: 16px;
+	font-weight: 600;
+	color: #fff;
+	cursor: pointer;
+	margin: 20px;
+	height: 35px;
+	text-align: center;
+	border: none;
+	background-size: 300% 100%;
+	border-radius: 50px;
+	-o-transition: all 0.4s ease-in-out;
+	-webkit-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn-hover:hover {
+	background-position: 100% 0;
+	-o-transition: all 0.4s ease-in-out;
+	-webkit-transition: all 0.4s ease-in-out;
+  	transition: all 0.4s ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn-hover:focus {
+	outline: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.btn-hover.color-4 {
+	background-image: linear-gradient(
+		to right,
+		#fc6076,
+		#ff9a44,
+		#ef9d43,
+		#e75516
+	);
+	box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+}
+.weather-container {
+	display: flex;
+	align-items: center;
+}
+.weather-container img {
+	width: 200px;
 }
 
-.App-link {
-  color: #61dafb;
+.temperature-number {
+	font-size: 50pt;
 }
+.city-name {
+	width: 50px;
+}
+.weather-description {
+	font-weight: 300;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.weather-status{
+  margin: 0 auto;
+}
+.empty-input-error {
+	color:rgb(255, 98, 98)
 }
